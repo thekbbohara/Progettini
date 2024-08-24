@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+// @font-face {
+//     font-family: "robortoBold";
+//     src:local("/assets/fonts/Roboto-Bold.ttf");
+// }
+
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: hsl(231, 7%, 60%);
+    display: grid;
+    place-items: center;
+    min-height: calc(100vh - 0rem);
+    font-size: 1.6rem;
+}
+h1{
+    // font-family: "robotoBold";
+    font-weight: 700;
+    font-size: 4rem;
+    
+}
+h2{
+    font-size: 1.5rem;
+}
+main{
+    background-color: hsl(0, 0%, 100%);
+    max-width: 750px;
+    margin: auto;
+    border-radius: 1rem;
+}
+.sign-up-form{
+    // position: relative;
+    margin: auto;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    max-width: 75rem;
+    min-height: calc(100vh - 5rem);
+    width: 90vw;
+    padding: 2rem;
+    .context{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-inline: 2rem;
+        ul{
+            place-self: start;
+            // margin-right: auto;
+            padding-left: 1.65rem;
+            display: grid;
+            gap: 1rem;
+        }
+        li{
+            position: relative;
+            list-style: none;
+            font-size: 1.5rem;
+            &::before{
+                content: "";
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 0%;
+                left: -2rem;       
+                // background-color: hsl(4, 100%, 67%);
+                background-image: url(https://raw.githubusercontent.com/kbzcraft/newsletter-signUp-form/main/public/assets/images/icon-list.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            label{
+                font-size: 1.25rem;
+                font-weight: 700;
+                display: flex;
+                justify-content: space-between;
+                .errMsg{
+                    color: hsl(4, 100%, 67%);
+                    display: none;
+                }
+            }
+            #email , button{
+                padding-block: 1.5rem;
+                border-radius: .5rem;
+                outline: none;
+                border: .1rem #ccc solid;
+                margin-bottom: 1.5rem;
+            }
+            #email{
+                padding-inline: 1rem;
+            }
+            button{
+                background-color: hsl(234, 29%, 20%);
+                color: #fff;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+    .bg-img{
+        // background-color: red;
+        display: flex;
+        justify-content: flex-end;
+        border-radius: none;
+        // background-image: url(/assets/images/illustration-sign-up-desktop.svg);
+        img{
+            max-width: 95%;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+            // opacity: 0;
+        }
+    }
+}
+
+@media(max-width:585px){
+    .sign-up-form{
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 1rem;
+        
+
+    }
+}
+
+

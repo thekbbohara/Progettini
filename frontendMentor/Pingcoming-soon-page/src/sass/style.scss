@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+// font-family: 'Libre Franklin', sans-serif;
+*,*::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Franklin', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+}
+main{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 90vw;
+    max-width: 75rem;
+    margin-inline: auto;
+    display: grid;
+    gap: 1.25rem;
+    place-items: center;
+    text-align: center;
+    div{
+        display: grid;
+        gap: .65rem;
+        place-items: center;
+        h1{
+            // font-size: 1rem;
+            color: hsl(223, 100%, 88%);
+            font-weight: 300;
+            strong{
+                font-weight: 700;
+                color: #111;
+            }
+        }
+        h2{
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: .75;
+        }
+    }
+    img.dashboard{
+        width: 100%;
+        // max-width: 75rem;
+    }
+}
+form{
+    display: flex;
+    gap: 1rem;
+    // max-width: 30rem;
+    margin-block: 1rem;
+    margin-inline: auto;
+    div{
+        position: relative;
+        &::after{
+            color:  hsl(354, 100%, 66%);
+            position: absolute;
+            bottom: -2rem;
+            content: attr(data-err-msg);
+            font-size: 1rem;
+        }
+        input{
+            all: unset;
+            border-radius: 2.5rem;
+            max-width: 30rem;
+            width: 90vw;
+            border: .1rem solid #ddd;
+            padding: 1.5rem 1rem;
+            margin-inline: auto;
+            &::placeholder{
+                color: #295ab680;
+            }
+        }
+    }
+    button{
+        background-color: hsl(223, 87%, 63%);
+        border: none;
+        padding: 0 2.5rem;
+        border-radius: 2.5rem;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.45rem;
+        box-shadow: .1rem .1rem .5rem .1rem hsl(223, 87%, 63%);
+    
+    }
+}
+.medias{
+    display: flex;
+    margin-block: 1.5rem;
+}
+em{
+    max-width: 90vw;
+    margin-inline: auto;
+}
+@media(max-width:500px){
+    form{
+        flex-direction: column;
+        align-items: center;
+        div{
+            &::after{
+                position: static;
+            }
+            input{
+                width: 85vw;
+                margin-inline: auto;
+            }
+        }
+        button{
+            padding: 1.5rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 30rem;
+            width: 90vw;
+            // color: #111;
+        }
+    }
+    h1{
+        font-size: 2.65rem;
+    }
+}
+// .err-msg{
+//     font-size: 1rem;
+// }

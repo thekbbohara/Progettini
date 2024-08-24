@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    /* line-height: calc(1em + .5rem); */
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    /* background-color: hsla(0, 36%, 70%, 0.212); */
+    background-image: linear-gradient(135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%));
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-blend-mode: saturation;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.logo{
+    margin: 2.5rem 3.5rem;
+}
+.hero{
+    /* max-width: 37.5rem; */
+    width: 100vw;
+    /* max-height: 21.5rem; */
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: top;
+    place-self: center;
+}
+main>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-block: 4rem;
+
+}
+h1{
+    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+h1>span:first-child{
+    font-weight: 300;
+    color: hsl(0, 36%, 70%);
+}
+h1>span:nth-child(2), h1>span:last-child {
+    font-weight: 600;
+   opacity: .8;
+}
+p{
+    max-width: 52ch;
+    text-align: center;
+    color: hsl(0, 36%, 70%);
+    opacity: .6;
+    width: 90vw;
+}
+.input-div{
+    border: .1rem solid hsl(0, 36%, 70%);
+    border-radius: 4rem;
+    /* padding: .5rem; */
+    position: relative;
+    max-width: 90vw;
+}
+input{
+    padding: 1.5rem 4rem 1.5rem 1rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    color: hsl(0, 93%, 68%);
+    width: 90vw;
+    max-width: 40rem;
+}
+button{
+    all: unset;
+    position: absolute;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border-radius: 5rem;
+    font-size: 5rem;
+    font-weight: 400;
+    color: #fff;
+    width: 8rem;
+    height: 5.5rem;
+    top: -8%;
+    right: -0.25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media(min-width:910px){
+    main{
+        display: grid;
+        grid-template-areas:
+            "logo img"
+            "content img"
+            "content img";
+    }
+    .logo{
+        margin: 2.5rem 5rem;
+        grid-area: logo;
+    }
+    .hero{
+        grid-area: img;
+        /* max-width: 45rem; */
+        width: 50vw;
+        height: 100vh;
+        /* max-height: 21.5rem; */
+        /* aspect-ratio: 16/9; */
+        object-fit: cover;
+        object-position: top;
+        /* place-self: center; */
+    }
+    main>div{
+        grid-area: content;
+        place-self: left;
+        margin-inline-start: 5rem;
+        align-items: flex-start;
+    }
+    h1{
+        justify-content: center;
+    align-items: flex-start;
+    }
+    p{
+        text-align: left;
+    }
+}
+.error-icon,.error-msg{
+    position: absolute;
+    
+}
+.error-icon{
+    top:25%;
+    right: 21%;
+    background-color:hsla(0, 93%, 59%, 0.815);
+    width: 2rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    text-transform: lowercase;
+    color: #fff;
+    display: none;
+}
+.error-msg{
+    bottom: -60%;
+    left: 5%;
+    color: hsl(0, 36%, 70%);
+    display: none;
+}

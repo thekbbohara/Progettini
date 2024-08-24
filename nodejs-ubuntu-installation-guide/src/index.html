@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Installation guide for node.js and npm in Ubuntu: Two Methods for a Fresh Start - Step-by-Step Guide to Reinstall npm and Node.js, with or without Node Version Manager (NVM)">
+    <link rel="shortcut icon" href="./assets/images/logo-hexagon-card.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Node.js Installation Guide for Ubuntu</title>
+</head>
+<body>
+    <main>
+        <h1>How to Install Node.js and NPM On Ubuntu</h1>
+        <h2>A basic guide with super less explanition</h2>
+        <nav>
+            <ul>
+                <li><a class="node-src">Node Source</a></li>
+                <li><a class="nvm">NVM</a></li>
+            </ul>
+        </nav>
+        <div class="divider"></div>
+        <section class="node-src-guide">
+            <h1>Installing nodejs and npm with Node Source</h1>
+            <ol>
+                <li>
+                    <p>Remove the existing npm and Node.js installations:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>sudo apt remove npm && sudo apt remove nodejs</span>
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <p>Update the package lists:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>sudo apt update</span>
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <p>Install Node.js and npm using the NodeSource PPA (Personal Package Archive). Run the following commands to add the NodeSource repository and install Node.js:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -</span>
+                            <span>sudo apt install -y nodejs</span>
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <p>Verify that Node.js and npm are installed correctly by running the following commands:</p>
+                    <div>
+                    <div class="code-header">
+                        <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <span>copy code</span></button>
+                        </div>
+                            <code>
+                                <span>node --version</span>
+                                <span>npm --version</span>
+                            </code>
+                    </div>
+                </li>
+                <em>These commands should display the installed versions of Node.js and npm, respectively.</em>
+            </ol>
+        </section>
+        <section class="nvm-guide hidden">
+            <h1>Installing nodejs and npm with Node Version Manager (NVM):</h1>
+            <ol>
+                <li>
+                    <p>Remove the existing npm and Node.js installations:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>sudo apt remove npm</span>
+                            <span>sudo apt remove nodejs</span>
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <p>Install Node Version Manager (NVM), which allows you to manage multiple versions of Node.js:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash</span>
+                            <span>source ~/.bashrc</span>
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <p>Verify that NVM is installed correctly by running the following command:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>nvm --version</span>
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <p>Install a stable LTS version of Node.js using NVM:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>nvm install --lts</span>
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <p>Verify that Node.js is installed correctly by running the following command:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>node --version</span>
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <p>Update npm to the latest version:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>npm install -g npm@latest</span>
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <p>Verify that npm is installed correctly by running the following command:</p>
+                    <div>
+                        <div class="code-header">
+                            <button class="copy-btn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <span>copy code</span></button>
+                        </div>
+                        <code>
+                            <span>npm --version</span>
+                        </code>
+                    </div>
+                </li>
+                <em>
+                    With these steps, you have successfully reinstalled npm in Ubuntu. Please note that using NVM allows you to switch between different Node.js versions easily. You can install and use different versions by running nvm install &lt;version&gt; and nvm use &lt;version&gt;, respectively.
+                </em>
+                <p>It's important to keep your Node.js and npm versions up to date for security and compatibility reasons.</p>
+            </ol>
+        </section>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>

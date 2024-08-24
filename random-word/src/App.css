@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Ubuntu+Mono&display=swap');
+/* font-family: 'Audiowide', cursive;
+font-family: 'Ubuntu Mono', monospace; */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: calc(1em + .8rem);
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    min-height: 100vh;
+}
+nav{
+    display: grid;
+    font-family: 'Audiowide', cursive;
+    height: 5rem;
+    box-shadow: 0 .1rem .5rem #1e2e3d63;
+    align-content: center;
+}
+
+#app{
+    display: grid;
+    place-items: center;
+
+    font-family: 'Ubuntu Mono', monospace;
+    min-height: calc(100vh - 5rem);
+}
+#container{
+    margin-inline: auto;
+    width: 94vw;
+    max-width: 420px;
+}
+.a-l{
+    place-self: start;
+}
+
+.f-r{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#speak{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    background-color: #8ab4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app{
+    display: none;
+}
+
+.skeleton{
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+    max-width: 420px;
+    margin-inline: auto;
+    justify-content: center;
+    min-height: 90vh;
+}
+.skeleton *{
+    background-color: #ddddddd3;
+    min-height: 1.5rem;
+    border-radius: .2rem;
+}
+.skeleton>div{
+    display: flex;
+    gap: .5rem;
+    background-color: transparent;
+    align-items: center;
+    animation: none;
+}
+.round{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+}
+.skeleton>div h1{
+    width: 50%;
+    /* margin-left: 45px; */
+    height: 2rem;
+
+}
+.skeleton p{
+    width: 75%;
+}
+.skeleton p.long{
+    width: 100%;
+}
+
+.skeleton * {
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 80%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+@media(max-width:235px){
+    #app h1{
+        font-size: 2rem;
+    }
+}

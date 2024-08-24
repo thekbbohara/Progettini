@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(30, 38%, 92%);
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+.container{
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr); */
+    max-width: calc(375px * 2);
+    width:90vw;
+    /* min-height: 30rem; */
+    margin-inline: auto;
+}
+picture img{
+    max-width: calc(375px * 1);
+    height: 30rem;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.details{
+    background: white;
+    padding: 2rem 2.5rem;
+    width:90vw;
+    max-width: calc(375px * 1);
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+    max-height: 30rem;
+}
+.details h4{
+    font-family: Montserrat;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+.details h1{
+    font-size: 3rem;
+    line-height: calc(2.3rem);
+    font-family: Fraunces;
+}
+.details p{
+    font-size: 14px;
+    font-family: Montserrat;
+}
+.details .price{
+    font-family: Fraunces;
+}
+.details strong{
+    font-size: 2.5rem;
+    color:hsl(158, 36%, 37%);
+}
+.details em{
+    opacity: 0.75;
+    text-decoration: line-through;
+}
+.details a{
+    all: unset;
+    border-radius: 1rem;
+    background: hsl(138, 100%, 7%);
+    width: fit-content;
+    padding: 1rem 2rem;
+    font-family: Montserrat;
+    color: hsl(0, 0%, 100%);
+    margin-inline:auto;
+    width:80%;
+    /* max-width:80%; */
+    display:flex;
+    justify-content: center;
+}
+@media(max-width:700px){
+    .container{
+        flex-direction: column;
+        max-width: 375px;
+        margin-top: 5rem;
+        /* gap: -100px; */
+    }
+    picture img{
+        max-height: 17rem;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 0px;
+        width: 90vw;
+        /* margin-top: 5rem; */
+        z-index: 5;
+    }
+    .details{
+        max-height: 100%;
+    }
+}
+
+@media(max-width:375px){
+    .details h1{
+        font-size: 2rem;
+        line-height: calc(1.7rem);
+    }
+}
+@media(max-width:275px){
+    .details h1,.details strong{
+        font-size: 1.5rem;
+        line-height: calc(1.25rem);
+    }
+    .details a{
+        padding: 1rem;
+        width:94%;
+    }
+}

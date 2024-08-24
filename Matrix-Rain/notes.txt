@@ -1,0 +1,51 @@
+fillText()
+    ctx.fillText(text,x,y)
+
+createLinearGradient()
+    ctx.createLinearGradient(startX,startY,endX,endY);
+
+    let gradient = ctx.createLinearGradient(0,0,canvas.width,canvas.height)
+    gradient.addColorStop(0,"rgba(225,25,50,.25)") //assignColors 
+    ....
+    gradient.addColorStop(1,"rgba(225,25,50,0.2)")
+
+createRadialGradient()
+    ctx.createRadialGradient(x1,y1,r1,x2,y2,r2);
+    1-inner_circle
+    2-outer-circle
+
+font
+    ctx.font='px monospace'
+    -ctx.font property specifies the current text style
+
+monospace: fonts have characters that occupy the same amount of horizontal space
+
+Delta Time Technique:
+    -delta time is the difference between frames and milliseconds
+
+
+PROCEDURAL programming
+    declare variables and functions step by step in the order I want them to be executed;
+
+Object Oriented Programming-(OOP)
+    wrap function and variables in Objects
+
+    JavaScript Class
+        it is a special kind of function used to create many similar objects / you can also call it a blueprint
+        Class Syntaxt
+            it is relatively new, it was introduced in 2015 and it's just so-called 'SYNTACTICAL SUGAR' (simplified syntaxt) built in native Javascript Prototype functionality
+        Methods
+            Methods are functions in class
+        Private Methods
+            Private Methods cannot be called directly from outside, they have restricted access
+        ::constructor is called when we instantiate class by using the new keyword
+    4 main principles of OOP:
+        1)Encapsulation    
+            - wrapping variables and related functions that operate on them in objects
+        2)Abstraction
+            -hiding unnecessary details from the users
+            -Abstraction is about hiding internal functionality and implementation details of our objects and only exposing essential information to user.
+        3)Inheritance
+        4)Polymorphism
+
+

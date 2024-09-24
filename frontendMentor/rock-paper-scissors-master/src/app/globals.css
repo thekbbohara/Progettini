@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-b from-[#1f3756] to-[#141539] h-screen bg-fixed;
+}
+.rock {
+  @apply bg-gradient-to-br from-[hsl(349,71%,52%)] to-[hsl(349,70%,56%)];
+}
+.paper {
+  @apply bg-gradient-to-br from-[hsl(230,89%,62%)] to-[hsl(230,89%,65%)];
+}
+.scissors {
+  @apply bg-gradient-to-br from-[hsl(39,89%,49%)] to-[hsl(40,84%,53%)];
+}

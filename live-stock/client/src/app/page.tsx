@@ -11,13 +11,12 @@ export default function Home() {
 
   useEffect(() => {
     const socket = io("http://localhost:8080");
-    socket.on("connect", () => {
-      console.log(socket.connected); // true
-    });
+    // socket.on("connect", () => {
+    //   console.log(socket.connected); // true
+    // });
 
     socket.on("data", (newData) => {
       console.log(newData);
-
       // Find changed data
       const changedRows = new Set<string>();
       newData.forEach((newRow: string[]) => {
@@ -42,7 +41,8 @@ export default function Home() {
     });
 
     socket.on("disconnect", () => {
-      console.log(socket.connected); // false
+      // console.log(socket.connected); // false
+      alert("socket disconnected");
     });
 
     return () => {

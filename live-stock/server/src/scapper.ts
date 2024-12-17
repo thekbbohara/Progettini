@@ -5,16 +5,12 @@ export default async function scrapper(socket: Socket) {
   let oldData: string[][] = []; // Initialize oldData as an empty array
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-
+  await page.setViewport({ width: 1080, height: 1024 });
   await page.goto("https://coinmarketcap.com/", {
     waitUntil: "domcontentloaded",
   });
-
-  await page.setViewport({ width: 1080, height: 1024 });
-
   while (true) {
     try {
-      // Fetch the new data
       const tbody = await page.waitForSelector("table tbody");
       const newData: string[][] | undefined = await tbody?.evaluate(
         (el: HTMLTableSectionElement) => {
@@ -38,25 +34,24 @@ export default async function scrapper(socket: Socket) {
       );
 
       // Compare new data with old data
-      const hasChanges =
-        JSON.stringify(cleanedNewData) !== JSON.stringify(oldData);
+      // const hasChanges =
+      //   JSON.stringify(cleanedNewData) !== JSON.stringify(oldData);
+      // if (hasChanges) {
+      // console.log("Data updated:", cleanedNewData);
 
-      if (hasChanges) {
-        // console.log("Data updated:", cleanedNewData);
-        oldData = cleanedNewData; // Update oldData with the new data
-        if (socket) {
-          // console.log("sc", socket.connected);
-          socket.emit("data", cleanedNewData);
-          socket.on("connect_error", (err) => {
-            console.error("Socket connection error:", err);
-            return;
-          });
-          socket.on("connect_timeout", () => {
-            console.error("Socket connection timed out");
-            return;
-          });
+      const isChanged = cleanedNewData.some((data: string[], id: number) => {
+        if (JSON.stringify(data) != JSON.stringify(oldData[id])) {
+          // if data changes
+          oldData = cleanedNewData; // Update oldData with the new data
+          if (socket) {
+            socket.emit("data", cleanedNewData);
+          }
+          return true; // Stops the `some` loop
         }
-      } else {
+        return false;
+      });
+
+      if (!isChanged) {
         console.log("No changes detected. Waiting for next update...");
       }
 
